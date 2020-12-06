@@ -1,5 +1,4 @@
 import React from 'react';
-import Text from '../Text'
 import './Button.scss';
 
 export default function Button (props) {
@@ -8,7 +7,7 @@ export default function Button (props) {
         <div>
             <button className={identifier} onClick={onClick} disabled={disabled} >
                 <div className="button-Dad">
-                        <Text type="textbutton">{name}</Text>
+                        {name}
                     <img className="Icons" src={icon} alt="Icon"/>
                 </div>
             </button>
