@@ -1,0 +1,27 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+
+  button{
+    margin: 53px 12px 0 16px;
+  }
+}
+
+p {
+  text-align: center;
+}
+
+.logo {
+  width: 375px;
+  height: 300px;
+}

@@ -7,6 +7,7 @@ import RegisterPet from '../../pages/cadastro-do-pet'
 import RegisterAdopter from '../../pages/cadastro-do-adotante/cadastro-tipo-de-pessoa'
 import DonorRegister from '../../pages/cadastro-do-doador'
 import ProfilePet from '../../pages/perfil-pet'
+import ScreenSucess from '../../pages/tela-de-sucesso'
 import Login from '../../pages/login'
 
 export default function Routes(){
@@ -21,6 +22,7 @@ export default function Routes(){
                 <Route exact path="/cadastro-do-pet" component={RegisterPet} />
                 <Route exact path="/cadastro-do-doador" component={DonorRegister} />
                 <Route exact path="/perfil-do-pet" component={ProfilePet} />
+                <Route exact path="/sucesso" component={ScreenSucess} />
                 <Route exact path="/login" component={Login} />
             </Switch>
         </BrowserRouter>
