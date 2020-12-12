@@ -5,15 +5,35 @@ import Logo from "../../assets/images/Group-107.svg";
 import InputField from "../../components/InputField";
 import Icon from "../../assets/images/SetaProx.svg";
 import "./styles.scss";
+// import { useHistory } from "react-router-dom";
+import firebase from "../../firebaseConfig";
+
 export default function Login(props) {
-  const [user, setUser] = useState("");
+  // const history = useHistory();
+  // const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { href } = props;
 
-  function handleLogin() {
-    // Implementar funcionalidade do login
-    console.log(user, password);
+  // function createUser(email, password) {
+  //   return firebase.auth().createUserWithEmailAndPassword(email, password);
+  // }
+
+  async function handleLogin() {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      setEmail("");
+      setPassword("");
+    } catch (error) {
+      console.log("ERROR : ", error.code);
+    }
   }
+
+  // function handleLogout() {
+  //   firebase.auth().signOut();
+  //   history.push("/login");
+  // }
+
   return (
     <>
       <section className="container-form">
@@ -26,8 +46,8 @@ export default function Login(props) {
           label="Usuário :"
           type="text"
           placeholder="Digite seu usuário..!!"
-          value={user}
-          onChange={setUser}
+          value={email}
+          onChange={setEmail}
         />
 
         <InputField
